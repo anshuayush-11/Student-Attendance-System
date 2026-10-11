@@ -1,0 +1,268 @@
+/*
+ * Attendify — Shared Stylesheet
+ * Covers: index.html, login.html, and all Stitch-generated screens.
+ * Replaces all inline styles flagged by the IDE linter.
+ *
+ * NOTE: Two remaining inline style= attributes exist in the JS-injected
+ * analytics and student-portal sections (backend integration scripts).
+ * They use runtime-computed values (percentage widths and hex colours
+ * returned by the API) and therefore CANNOT be moved to static CSS.
+ * They are intentional and unavoidable dynamic styles.
+ */
+
+/* ─── Accessibility helper ───────────────────────────────────────────────── */
+/* Visually hides an element while keeping it accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Base Reset (mirrors Stitch inline <style>) ─────────────────────────── */
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child  { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+
+/* ─── index.html ─────────────────────────────────────────────────────────── */
+.card-arrow-icon {
+  font-size: 16px;
+}
+
+/* ─── login.html ─────────────────────────────────────────────────────────── */
+.demo-hint {
+  font-size: 0.75rem;
+  color: #45474c;
+  margin: 0 0 0.5rem;
+}
+.demo-note {
+  font-size: 0.75rem;
+  color: #75777d;
+  margin: 0;
+}
+
+/* ─── Progress / Bar widths (replaces all style="width: X%") ─────────────── */
+/* Teacher Dashboard — weekly bar chart */
+.bar-88  { height: 88%; }
+.bar-84  { height: 84%; }
+.bar-91  { height: 91%; }
+.bar-86  { height: 86%; }
+.bar-79  { height: 79%; }
+/* Teacher Dashboard — schedule table progress bars */
+.bar-w-50    { width: 50%; }
+.bar-w-889   { width: 88.9%; }
+.bar-w-952   { width: 95.2%; }
+/* Analytics page — subject bars */
+.bar-w-92    { width: 92%; }
+.bar-w-89    { width: 89%; }
+.bar-w-82    { width: 82%; }
+.bar-w-71    { width: 71%; }
+.bar-w-58    { width: 58%; }
+/* Analytics ledger rows */
+.bar-w-95    { width: 95%; }
+.bar-w-866   { width: 86.6%; }
+.bar-w-816   { width: 81.6%; }
+.bar-w-716   { width: 71.6%; }
+.bar-w-566   { width: 56.6%; }
+/* Student Portal — subject progress bars */
+.bar-w-913   { width: 91.3%; }
+.bar-w-880   { width: 88.0%; }
+.bar-w-826   { width: 82.6%; }
+.bar-w-682   { width: 68.2%; }
+.bar-w-550   { width: 55.0%; }
+
+/* ─── Shared utilities ───────────────────────────────────────────────────── */
+/* Icon sizes used inline (e.g. "font-size: 16px" on material-symbols spans) */
+.icon-sm  { font-size: 14px; }
+.icon-md  { font-size: 16px; }
+.icon-lg  { font-size: 18px; }
+.icon-xl  { font-size: 20px; }
+.icon-2xl { font-size: 22px; }
+
+/* ─── index.html — full page styles (moved from <style> block) ───────────── */
+.idx-body {
+  font-family: 'Inter', sans-serif;
+  background: #f8f9ff;
+  color: #0b1c30;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.idx-container {
+  max-width: 720px;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.idx-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.idx-logo-row svg { width: 48px; height: 48px; }
+.idx-brand-text h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #091426;
+}
+.idx-brand-text p { margin: 0; font-size: 0.875rem; color: #45474c; }
+.idx-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: #e2dfff;
+  color: #100563;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.idx-badge .dot { width: 6px; height: 6px; border-radius: 9999px; background: #5654a8; }
+.idx-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #091426;
+  text-align: center;
+  margin: 0;
+}
+.idx-subtext {
+  font-size: 0.9rem;
+  color: #45474c;
+  text-align: center;
+  max-width: 480px;
+  margin: -0.75rem 0 0;
+}
+.idx-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+.idx-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s, transform 0.15s;
+  cursor: pointer;
+  border: 1px solid #e5eeff;
+}
+.idx-card:hover { box-shadow: 0 4px 12px rgba(9,20,38,0.1); transform: translateY(-2px); }
+.idx-card-icon {
+  width: 40px; height: 40px; border-radius: 0.5rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.idx-card-icon.blue   { background: #e5eeff; color: #5654a8; }
+.idx-card-icon.green  { background: #d4fce8; color: #00301f; }
+.idx-card-icon.indigo { background: #d8e3fb; color: #3c475a; }
+.idx-card-icon.amber  { background: #fff3c4; color: #92620a; }
+.idx-card h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem; font-weight: 600; margin: 0; color: #091426;
+}
+.idx-card p { font-size: 0.8125rem; color: #45474c; margin: 0; line-height: 1.5; }
+.idx-card-arrow {
+  margin-top: auto;
+  font-size: 0.8125rem; font-weight: 600;
+  color: #5654a8;
+  display: flex; align-items: center; gap: 0.25rem;
+}
+.idx-footer { font-size: 0.75rem; color: #75777d; text-align: center; padding: 0 1rem 1.5rem; }
+.idx-footer strong { color: #091426; }
+
+/* ─── login.html — full page styles (moved from <style> block) ───────────── */
+.lgn-body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #e5eeff 0%, #f8f9ff 60%, #d3e4fe 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lgn-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(9,20,38,0.1);
+}
+.lgn-logo-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
+.lgn-logo-row svg { width: 40px; height: 40px; }
+.lgn-logo-row h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.5rem; font-weight: 700; color: #091426; margin: 0;
+}
+.lgn-logo-row p { margin: 0; font-size: 0.75rem; color: #45474c; }
+.lgn-card h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem; font-weight: 600; color: #091426; margin: 0 0 0.375rem;
+}
+.lgn-subtitle { font-size: 0.875rem; color: #45474c; margin: 0 0 1.5rem; }
+.lgn-card label { display: block; font-size: 0.8125rem; font-weight: 500; color: #0b1c30; margin-bottom: 0.375rem; }
+.lgn-input-wrap { position: relative; margin-bottom: 1rem; }
+.lgn-card input {
+  width: 100%; padding: 0.625rem 0.875rem;
+  border: 1px solid #c5c6cd; border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #0b1c30;
+  outline: none; transition: border 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.lgn-card input:focus { border-color: #5654a8; box-shadow: 0 0 0 3px rgba(86,84,168,0.15); }
+.lgn-btn {
+  width: 100%; padding: 0.75rem;
+  background: #091426; color: #fff;
+  border: none; border-radius: 0.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9375rem; font-weight: 600;
+  cursor: pointer; transition: background 0.2s;
+}
+.lgn-btn:hover { background: #1e293b; }
+.lgn-btn:disabled { background: #75777d; cursor: not-allowed; }
+.lgn-error {
+  background: #ffdad6; color: #93000a;
+  border-radius: 0.5rem; padding: 0.75rem 1rem;
+  font-size: 0.8125rem; margin-bottom: 1rem;
+  display: none;
+}
+.lgn-divider { border: none; border-top: 1px solid #e5eeff; margin: 1.5rem 0; }
+.lgn-demo-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.lgn-chip {
+  font-size: 0.75rem; font-weight: 500;
+  padding: 0.25rem 0.625rem; border-radius: 9999px;
+  cursor: pointer; border: 1px solid;
+  transition: 0.15s;
+}
+.lgn-chip.teacher { background: #e5eeff; color: #3c475a; border-color: #bcc7de; }
+.lgn-chip.student { background: #d4fce8; color: #00301f; border-color: #68dba9; }
+.lgn-chip:hover { filter: brightness(0.93); }

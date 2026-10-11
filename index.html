@@ -2,133 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta http-equiv="refresh" content="0; url=Student-Attendance-System/index.html"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Attendify - Student Attendance System</title>
-  <meta name="description" content="Attendify is a modern university-grade student attendance management system for faculty and students."/>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    ::-webkit-scrollbar { display: none; }
-    body {
-      margin: 0; padding: 0;
-      font-family: "Inter", sans-serif;
-      background: #f8f9ff;
-      color: #0b1c30;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .container {
-      max-width: 720px; width: 100%;
-      padding: 2rem 1.5rem;
-      display: flex; flex-direction: column;
-      align-items: center; gap: 2rem;
-    }
-    .logo-row { display: flex; align-items: center; gap: 0.75rem; }
-    .logo-row svg { width: 48px; height: 48px; }
-    .brand-text h1 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 2rem; font-weight: 700;
-      letter-spacing: -0.02em; margin: 0; color: #091426;
-    }
-    .brand-text p { margin: 0; font-size: 0.875rem; color: #45474c; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 0.375rem;
-      padding: 0.25rem 0.75rem; border-radius: 9999px;
-      background: #e2dfff; color: #100563;
-      font-size: 0.75rem; font-weight: 600;
-    }
-    .badge .dot { width: 6px; height: 6px; border-radius: 9999px; background: #5654a8; }
-    .headline {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 1.5rem; font-weight: 600;
-      color: #091426; text-align: center; margin: 0;
-    }
-    .subtext { font-size: 0.9rem; color: #45474c; text-align: center; max-width: 480px; margin: -0.75rem 0 0; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem; width: 100%;
-    }
-    .card {
-      background: #fff; border-radius: 0.75rem; padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
-      text-decoration: none; color: inherit;
-      display: flex; flex-direction: column; gap: 0.75rem;
-      transition: box-shadow 0.2s, transform 0.15s;
-      border: 1px solid #e5eeff;
-    }
-    .card:hover { box-shadow: 0 4px 12px rgba(9,20,38,0.1); transform: translateY(-2px); }
-    .card-icon {
-      width: 40px; height: 40px; border-radius: 0.5rem;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .card-icon.blue { background: #e5eeff; color: #5654a8; }
-    .card-icon.green { background: #d4fce8; color: #00301f; }
-    .card-icon.indigo { background: #d8e3fb; color: #3c475a; }
-    .card-icon.amber { background: #fff3c4; color: #92620a; }
-    .material-symbols-outlined { font-size: 22px; }
-    .card h3 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 1rem; font-weight: 600; margin: 0; color: #091426;
-    }
-    .card p { font-size: 0.8125rem; color: #45474c; margin: 0; line-height: 1.5; }
-    .card-arrow {
-      margin-top: auto; font-size: 0.8125rem; font-weight: 600;
-      color: #5654a8; display: flex; align-items: center; gap: 0.25rem;
-    }
-    footer { font-size: 0.75rem; color: #75777d; text-align: center; padding: 0 1rem 1.5rem; }
-    footer strong { color: #091426; }
-  </style>
+  <script>
+    window.location.href = "Student-Attendance-System/index.html";
+  </script>
 </head>
-<body>
-  <div class="container">
-    <div class="logo-row">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="10" fill="#4338CA"/>
-        <path d="M12 21L18 27L28 14" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="29" cy="13" r="3" fill="#10B981"/>
-      </svg>
-      <div class="brand-text">
-        <h1>Attendify</h1>
-        <p>University Attendance Portal - Fall 2026</p>
-      </div>
-    </div>
-    <div class="badge"><span class="dot"></span> Student Attendance System - Stitch Project</div>
-    <p class="headline">Choose a screen to open</p>
-    <p class="subtext">All screens are standalone HTML files from the Stitch design. Open any below.</p>
-    <div class="cards">
-      <a class="card" href="teacher-dashboard.html" target="_blank">
-        <div class="card-icon blue"><span class="material-symbols-outlined">space_dashboard</span></div>
-        <h3>Teacher Dashboard</h3>
-        <p>Overview of all classes, live attendance session launcher, weekly trends, and early-warning panel.</p>
-        <span class="card-arrow">Open screen <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></span>
-      </a>
-      <a class="card" href="mark-attendance.html" target="_blank">
-        <div class="card-icon green"><span class="material-symbols-outlined">checklist_rtl</span></div>
-        <h3>Mark Attendance</h3>
-        <p>Live roll-call roster with search, batch actions, segmented Present/Late/Absent controls, and at-risk flags.</p>
-        <span class="card-arrow">Open screen <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></span>
-      </a>
-      <a class="card" href="attendance-records-analytics.html" target="_blank">
-        <div class="card-icon indigo"><span class="material-symbols-outlined">history_edu</span></div>
-        <h3>Attendance Records &amp; Analytics</h3>
-        <p>Audit ledger, 30-day trend chart, cohort compliance donut, and subject-wise comparative bar matrix.</p>
-        <span class="card-arrow">Open screen <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></span>
-      </a>
-      <a class="card" href="student-attendance-portal.html" target="_blank">
-        <div class="card-icon amber"><span class="material-symbols-outlined">school</span></div>
-        <h3>Student Attendance Portal</h3>
-        <p>Student-facing view with course-wise breakdown, monthly attendance calendar matrix, and session details.</p>
-        <span class="card-arrow">Open screen <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></span>
-      </a>
-    </div>
-  </div>
-  <footer><strong>Attendify</strong> - Stitch project retrieved via MCP - Design System: Academic Precision - Fall 2026</footer>
+<body style="font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #f8f9ff;">
+  <p>Loading Attendify Portal... If not redirected automatically, <a href="Student-Attendance-System/index.html">click here</a>.</p>
 </body>
 </html>
