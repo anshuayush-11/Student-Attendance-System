@@ -1,0 +1,1045 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<title>Teacher Dashboard - Attendify</title>
+<meta name="description" content="Attendify teacher dashboard for marking and tracking attendance"/>
+<link rel="stylesheet" href="styles.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#00190e",
+          "error": "#ba1a1a",
+          "on-tertiary": "#ffffff",
+          "surface-tint": "#545f73",
+          "on-secondary": "#ffffff",
+          "outline": "#75777d",
+          "surface-container-high": "#dce9ff",
+          "primary": "#091426",
+          "on-tertiary-fixed-variant": "#005137",
+          "tertiary-container": "#00301f",
+          "on-primary-container": "#8590a6",
+          "error-container": "#ffdad6",
+          "on-background": "#0b1c30",
+          "inverse-on-surface": "#eaf1ff",
+          "on-primary-fixed": "#111c2d",
+          "inverse-surface": "#213145",
+          "on-secondary-container": "#393689",
+          "secondary-container": "#a7a5ff",
+          "primary-fixed-dim": "#bcc7de",
+          "on-error": "#ffffff",
+          "surface-container-low": "#eff4ff",
+          "on-surface-variant": "#45474c",
+          "primary-fixed": "#d8e3fb",
+          "surface": "#f8f9ff",
+          "background": "#f8f9ff",
+          "secondary-fixed": "#e2dfff",
+          "on-secondary-fixed": "#100563",
+          "on-tertiary-container": "#24a375",
+          "primary-container": "#1e293b",
+          "on-tertiary-fixed": "#002114",
+          "surface-dim": "#cbdbf5",
+          "surface-bright": "#f8f9ff",
+          "tertiary-fixed": "#85f8c4",
+          "inverse-primary": "#bcc7de",
+          "on-primary": "#ffffff",
+          "surface-variant": "#d3e4fe",
+          "on-primary-fixed-variant": "#3c475a",
+          "surface-container-lowest": "#ffffff",
+          "outline-variant": "#c5c6cd",
+          "secondary-fixed-dim": "#c3c0ff",
+          "surface-container": "#e5eeff",
+          "on-surface": "#0b1c30",
+          "on-error-container": "#93000a",
+          "tertiary-fixed-dim": "#68dba9",
+          "on-secondary-fixed-variant": "#3e3c8f",
+          "secondary": "#5654a8",
+          "surface-container-highest": "#d3e4fe"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem",
+          "margin-sm": "1rem",
+          "margin": "2rem",
+          "gutter-sm": "1rem",
+          "space-xl": "2rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "title-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "metric-display": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "title-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "metric-display": [
+            "28px",
+            {
+              "lineHeight": "34px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center gap-space-sm"><img alt="Attendify App Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VuSpXd1fbEipnl7qi-ruyy21KtunVPnmOJf7-Nx10XiV9OAp5oklX5uzt5FJxLtTYDEKKHaCBcwcInIYIumJrA2EvwEH1oPzSiI5xAlhYt94_Y7nRPt4k6HmLxG4XyVPCVSuu4SFb2DlFxJKuu0Vxnvx9CfTzZU0OQYxC2rZbEt-ixTry9BoHJlnBJraOu0i0nPgAIgeWwu9db6PletAf0zoBJKX6SdH-KmXO_5Ahvjvcp09QNELZ_NCo"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary tracking-tight">Attendify</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium -mt-1">University Portal</span></div></div><div class="px-space-md py-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary">school</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Faculty of CS</span></div><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">Professor</span></div></div><nav class="flex-1 px-space-md py-space-sm space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold shadow-sm" data-path="teacher-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Teacher Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="mark-attendance" href="#"><span class="material-symbols-outlined text-[20px]">checklist_rtl</span><span>Mark Attendance</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="attendance-records" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span>Attendance Records</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="classes-and-students" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Classes &amp; Students</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Analytics</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav><div class="p-space-md"><div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Academic Term</span><span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Active</span></div><p class="font-title-md text-title-md text-on-surface">Fall 2026</p><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">event_available</span><span>Week 9 of 16</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-xl flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-lg"><img alt="Attendify App Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VuSpXd1fbEipnl7qi-ruyy21KtunVPnmOJf7-Nx10XiV9OAp5oklX5uzt5FJxLtTYDEKKHaCBcwcInIYIumJrA2EvwEH1oPzSiI5xAlhYt94_Y7nRPt4k6HmLxG4XyVPCVSuu4SFb2DlFxJKuu0Vxnvx9CfTzZU0OQYxC2rZbEt-ixTry9BoHJlnBJraOu0i0nPgAIgeWwu9db6PletAf0zoBJKX6SdH-KmXO_5Ahvjvcp09QNELZ_NCo"/><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[20px] text-outline">search</span><input class="w-full pl-10 pr-space-md py-2 bg-surface-container-lowest font-body-sm text-body-sm text-on-surface rounded-lg placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all shadow-none" placeholder="Search students, roll no, course codes (e.g. CS-301)..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">calendar_month</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Term: Fall 2026</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="text-right hidden sm:block"><p class="font-label-md text-label-md text-on-surface font-semibold leading-none">Dr. Elena Vance</p><p class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-1">Computer Science Dept</p></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBawpD9htBZEGUimIjrslAw1vqpLO8Y-u1-oqzwHgXGFpoYVk4QW1vWjjmjAyZknr7kXF1NoRJ85iMNuQ3kYmLUbG8A_G3gyAG2JaJCT1PhF5_IeyGab2eui72cTxL-ZS-yhIP-XwIsCZVAHiZ6yfA2AZNEIXW28UpGZ1HzkFgsWHykBn4YbF1aSO5qdUb46He_E8XWmAi_2p7FG0OdWkre49Ab_qvcp__zqGwtLoVpbegV3Pl21x-7"/></div></div></div></header><main class="w-full pt-16 bg-surface px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- Greeting & Header Overview Strip -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Fall Semester 2026
+        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Thursday, September 25</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+        Good morning, Professor Vance <span class="inline-block hover:rotate-12 transition-transform duration-200">👋</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        Manage your classes, track real-time attendance, and monitor at-risk students across your 4 active cohorts.
+      </p>
+</div>
+<!-- Quick Actions Header Cluster -->
+<div class="flex items-center gap-space-sm self-start lg:self-auto">
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">file_download</span>
+        Export Daily Log
+      </button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container transition-all" onclick="document.getElementById('quick-launcher-anchor').scrollIntoView({behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+        Take Attendance
+      </button>
+</div>
+</div>
+<!-- 4 Core Metric KPI Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-lg mb-space-xl">
+<!-- Metric 1: Total Students -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Enrolled</span>
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-metric-display text-metric-display text-on-surface">128</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-medium flex items-center">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+          +12 from last term
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Across 3 BCA &amp; 1 MCA modules</p>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-secondary/20 group-hover:bg-secondary transition-colors"></div>
+</div>
+<!-- Metric 2: Classes Today -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Classes Today</span>
+<div class="w-9 h-9 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-metric-display text-metric-display text-on-surface">4</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">2 done, 2 to go</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mt-space-sm overflow-hidden">
+<div class="bg-secondary h-full rounded-full" class="bar-w-50"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-primary-fixed-dim group-hover:bg-primary transition-colors"></div>
+</div>
+<!-- Metric 3: Attendance Taken -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Attendance Taken</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-metric-display text-metric-display text-on-surface">3 <span class="font-headline-sm text-headline-sm text-on-surface-variant">/ 4</span></span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface font-semibold">
+          75% logged
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Next slot: 02:00 PM Web Arch</p>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-outline-variant group-hover:bg-on-secondary-container transition-colors"></div>
+</div>
+<!-- Metric 4: Average Attendance Rate -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Average Rate</span>
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">show_chart</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-metric-display text-metric-display text-on-surface">86%</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold flex items-center">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+          +3.4% vs Dept
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Target threshold: 75% minimum</p>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-tertiary-fixed-dim group-hover:bg-tertiary-container transition-colors"></div>
+</div>
+</div>
+<!-- Bento Grid Main Content: Quick Launcher + Visual Analytics -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Quick Attendance Launcher Section (7 Cols) -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between" id="quick-launcher-anchor">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Quick Attendance Launcher</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure roll call parameters or pick from instant one-tap templates.</p>
+</div>
+</div>
+<span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-low text-secondary font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            Sync Ready
+          </span>
+</div>
+<!-- Preset Chips -->
+<div class="mb-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-2">Preset Shortcut Cohorts:</span>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 text-left" onclick="setPreset('BCA-1', 'Computer Science', '09:00 AM - 10:15 AM')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">flash_on</span>
+              Mark BCA-1 CS
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 text-left" onclick="setPreset('BCA-2', 'Data Structures', '11:30 AM - 12:45 PM')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">flash_on</span>
+              Mark BCA-2 Discrete Math
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 text-left" onclick="setPreset('MCA-1', 'Cloud Computing', '03:45 PM - 05:00 PM')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">flash_on</span>
+              Mark MCA-1 Cloud
+            </button>
+</div>
+</div>
+<!-- Form Dropdown Selectors Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md mb-space-md">
+<!-- Class Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-medium" for="class-select">Select Cohort / Class</label>
+<div class="relative">
+<select title="Select an option" class="w-full bg-surface-container-low font-body-sm text-body-sm text-on-surface px-space-md py-2.5 rounded-lg appearance-none focus:outline-none focus:bg-surface-container transition-all" id="class-select">
+<option value="BCA-1">BCA-1 (Section A &amp; B)</option>
+<option value="10th-A">10th Grade - Division A</option>
+<option value="10th-B">10th Grade - Division B</option>
+<option value="BCA-2">BCA-2 (Senior Cohort)</option>
+<option value="MCA-1">MCA-1 (Postgraduate)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">unfold_more</span>
+</div>
+</div>
+<!-- Subject Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-medium" for="subject-select">Subject / Module</label>
+<div class="relative">
+<select title="Select an option" class="w-full bg-surface-container-low font-body-sm text-body-sm text-on-surface px-space-md py-2.5 rounded-lg appearance-none focus:outline-none focus:bg-surface-container transition-all" id="subject-select">
+<option value="Computer Science">Computer Science Fundamentals</option>
+<option value="Mathematics">Discrete Mathematics</option>
+<option value="Data Structures">Algorithms &amp; Data Structures</option>
+<option value="English">Technical Communication</option>
+<option value="Cloud Computing">Cloud Systems Architecture</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">unfold_more</span>
+</div>
+</div>
+<!-- Date Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-medium" for="session-date">Attendance Date</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low font-body-sm text-body-sm text-on-surface px-space-md py-2.5 rounded-lg focus:outline-none focus:bg-surface-container transition-all" id="session-date" type="date" value="2026-09-25"/>
+</div>
+</div>
+<!-- Lecture Slot Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-medium" for="slot-select">Lecture Time Slot</label>
+<div class="relative">
+<select title="Select an option" class="w-full bg-surface-container-low font-body-sm text-body-sm text-on-surface px-space-md py-2.5 rounded-lg appearance-none focus:outline-none focus:bg-surface-container transition-all" id="slot-select">
+<option value="09:00 AM - 10:15 AM">09:00 AM - 10:15 AM (Period 1)</option>
+<option value="11:30 AM - 12:45 PM">11:30 AM - 12:45 PM (Period 2)</option>
+<option value="02:00 PM - 03:15 PM">02:00 PM - 03:15 PM (Period 3)</option>
+<option value="03:45 PM - 05:00 PM">03:45 PM - 05:00 PM (Period 4)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">schedule</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer with dynamic alert and CTA -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pt-space-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">verified</span>
+<span>Offline caching enabled for mobile roll call</span>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-lg bg-primary text-on-primary font-title-md text-title-md shadow-md hover:bg-primary-container transition-all group" id="start-session-btn" onclick="startSession()" type="button">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary-fixed"></span>
+</span>
+<span>Start Attendance Session</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Mini Analytics Preview (5 Cols) -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">bar_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Weekly Attendance Trends</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Week 9</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Average daily attendance benchmarked against campus standard (82.5%).
+        </p>
+<!-- SVG Bar Chart Visualization -->
+<div class="w-full bg-surface-container-low p-space-md rounded-xl mb-space-md">
+<div class="h-40 w-full flex items-end justify-between gap-2 pt-6 pb-2 px-2">
+<!-- Monday: 88% -->
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm pointer-events-none">88%</span>
+<div class="w-full max-w-[36px] bg-secondary rounded-t-md transition-all duration-300 group-hover:brightness-110" class="bar-88"></div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold mt-1">Mon</span>
+</div>
+<!-- Tuesday: 84% -->
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm pointer-events-none">84%</span>
+<div class="w-full max-w-[36px] bg-secondary-container rounded-t-md transition-all duration-300 group-hover:brightness-110" class="bar-84"></div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold mt-1">Tue</span>
+</div>
+<!-- Wednesday: 91% -->
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm pointer-events-none">91%</span>
+<div class="w-full max-w-[36px] bg-tertiary-fixed-dim rounded-t-md transition-all duration-300 group-hover:brightness-110" class="bar-91"></div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold mt-1">Wed</span>
+</div>
+<!-- Thursday (Today): 86% -->
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm pointer-events-none">86%</span>
+<div class="w-full max-w-[36px] bg-primary rounded-t-md transition-all duration-300 group-hover:brightness-110 relative" class="bar-86">
+<div class="w-1.5 h-1.5 bg-secondary-fixed rounded-full mx-auto mt-1"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold mt-1">Thu*</span>
+</div>
+<!-- Friday (Projected): 79% -->
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-6 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm pointer-events-none">79%</span>
+<div class="w-full max-w-[36px] bg-surface-container-highest rounded-t-md transition-all duration-300 group-hover:brightness-110" class="bar-79"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1">Fri</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2 px-1">
+<span>0%</span>
+<span class="text-secondary font-semibold">Today Peak: 91% (Wed)</span>
+<span>100%</span>
+</div>
+</div>
+</div>
+<!-- Quick Summary Footnote -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Departmental Compliance: <strong>Met</strong></span>
+</div>
+<a class="font-label-sm text-label-sm text-secondary hover:underline font-semibold" href="#">Full Analytics →</a>
+</div>
+</div>
+</div>
+<!-- Dual Layout: Today's Schedule Table & Early Warning Intervention Panel -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Today's Schedule & Real-Time Roster Table (8 Cols) -->
+<div class="xl:col-span-8 rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Today's Class Schedule</h2>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container font-semibold text-on-surface">4 Sessions</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live audit trail for classroom attendance and room assignments.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Filter Classes" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Print Roster Sheet" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</div>
+<!-- High-density Responsive Table Container -->
+<div class="overflow-x-auto -mx-space-lg px-space-lg">
+<table class="w-full text-left">
+<thead>
+<tr class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider bg-surface-container-low/50 rounded-lg">
+<th class="py-3 px-space-md font-semibold">Time &amp; Slot</th>
+<th class="py-3 px-space-md font-semibold">Class / Course</th>
+<th class="py-3 px-space-md font-semibold">Location</th>
+<th class="py-3 px-space-md font-semibold">Attendance Logged</th>
+<th class="py-3 px-space-md font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1: BCA-1 Completed -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">check_circle</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">09:00 AM</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant pl-6 block">Period 1</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-title-md text-title-md text-on-surface">BCA-1</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Computer Science</div>
+</td>
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">meeting_room</span>
+                  Room 402
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Main Wing</span>
+</td>
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">done_all</span>
+                    32 / 36 (88.8%)
+                  </span>
+</div>
+<div class="w-24 bg-surface-container-high rounded-full h-1 mt-1.5">
+<div class="bg-secondary h-full rounded-full" class="bar-w-889"></div>
+</div>
+</td>
+<td class="py-4 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors inline-flex items-center gap-1" type="button">
+<span>View Roster</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: BCA-2 Completed -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">check_circle</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">11:30 AM</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant pl-6 block">Period 2</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-title-md text-title-md text-on-surface">BCA-2</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Algorithms &amp; Data Structures</div>
+</td>
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">desktop_windows</span>
+                  Lab 3
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Turing Hall</span>
+</td>
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span>
+                    40 / 42 (95.2%)
+                  </span>
+</div>
+<div class="w-24 bg-surface-container-high rounded-full h-1 mt-1.5">
+<div class="bg-tertiary-fixed-dim h-full rounded-full" class="bar-w-952"></div>
+</div>
+</td>
+<td class="py-4 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors inline-flex items-center gap-1" type="button">
+<span>View Roster</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: BCA-1 In-Progress / Due Now -->
+<tr class="bg-secondary-fixed/30 hover:bg-secondary-fixed/40 transition-colors">
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-md text-label-md font-bold text-on-secondary-fixed">02:00 PM</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold pl-4 block">Current Slot</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-title-md text-title-md text-on-surface font-bold">BCA-1</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Web Architecture &amp; REST APIs</div>
+</td>
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm font-medium">
+<span class="material-symbols-outlined text-[16px] text-secondary">meeting_room</span>
+                  Room 301
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">East Quad</span>
+</td>
+<td class="py-4 px-space-md whitespace-nowrap">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                  Pending Call
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-1">36 students enrolled</span>
+</td>
+<td class="py-4 px-space-md text-right whitespace-nowrap">
+<button class="px-3.5 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary-container transition-all inline-flex items-center gap-1.5" onclick="startSession()" type="button">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+<span>Take Attendance</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: MCA-1 Upcoming -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">schedule</span>
+<span class="font-label-md text-label-md text-on-surface">03:45 PM</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant pl-6 block">Period 4</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-title-md text-title-md text-on-surface">MCA-1</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cloud Systems Architecture</div>
+</td>
+<td class="py-4 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">podium</span>
+                  Seminar Hall B
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auditorium Complex</span>
+</td>
+<td class="py-4 px-space-md whitespace-nowrap">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+                  Scheduled
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-1">Starts in 1h 45m</span>
+</td>
+<td class="py-4 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors inline-flex items-center gap-1 cursor-not-allowed opacity-75" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<span>Ready</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Attendance Health & Early Warning Intervention Panel (4 Cols) -->
+<div class="xl:col-span-4 rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-error">warning</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Early Warning Panel</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">3 Flagged</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Students below mandatory <strong>75% institutional attendance threshold</strong> across active modules.
+        </p>
+<!-- Student Cards List -->
+<div class="space-y-space-sm mb-space-md">
+<!-- Student 1: Critical -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container font-headline-sm flex items-center justify-center font-bold shrink-0">
+                MB
+              </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h3 class="font-title-md text-title-md text-on-surface truncate">Marcus Brody</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">#104</span>
+</div>
+<p class="font-body-sm text-body-sm text-error font-medium truncate">
+                  CS (54%) • 3 consecutive absences
+                </p>
+</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors shrink-0" onclick="notifyStudent('Marcus Brody')" title="Contact Student" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+</div>
+<!-- Student 2: Warning -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-secondary font-headline-sm flex items-center justify-center font-bold shrink-0">
+                SC
+              </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h3 class="font-title-md text-title-md text-on-surface truncate">Sofia Chen</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">#119</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium truncate">
+                  Math (68%) • Missed assignment
+                </p>
+</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors shrink-0" onclick="notifyStudent('Sofia Chen')" title="Contact Student" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+</div>
+<!-- Student 3: Warning -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface font-headline-sm flex items-center justify-center font-bold shrink-0">
+                DW
+              </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h3 class="font-title-md text-title-md text-on-surface truncate">DeShawn Washington</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">#122</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium truncate">
+                  CS (71%) • Warning threshold alert
+                </p>
+</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors shrink-0" onclick="notifyStudent('DeShawn Washington')" title="Contact Student" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Panel Buttons -->
+<div class="space-y-2 pt-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-error-container text-on-error-container font-label-md text-label-md font-semibold hover:bg-error hover:text-on-error transition-all flex items-center justify-center gap-2 shadow-sm" id="send-warning-btn" onclick="sendAutomatedWarnings()" type="button">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+          Send Automated Warning Notification
+        </button>
+<button class="w-full py-2 px-space-md rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface transition-colors text-center block" type="button">
+          Download Dean's Attendance Risk Dossier (PDF)
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Attendance Modal Drawer Overlay (Simulation) -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden items-center justify-center p-4" id="live-rollcall-modal">
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-xl shadow-xl p-space-xl flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">checklist</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="modal-cohort-title">Active Session: BCA-1 Computer Science</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="modal-cohort-slot">Thursday 25 Sep • Room 301 • 36 Enrolled</p>
+</div>
+</div>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" onclick="closeModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Quick Toggles -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Bulk Actions</span>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold hover:opacity-90" onclick="markAll('present')" type="button">
+            ✓ Mark All Present
+          </button>
+<button class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm hover:opacity-90" onclick="markAll('reset')" type="button">
+            Reset
+          </button>
+</div>
+</div>
+<!-- Quick Roster Simulator List -->
+<div class="max-h-64 overflow-y-auto space-y-2 pr-1">
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-6">01</span>
+<span class="font-title-md text-title-md text-on-surface">Alex Rivera</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Roll #101</span>
+</div>
+<div class="flex items-center gap-1.5 attendance-toggle-group">
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-tertiary-fixed text-on-tertiary-fixed" onclick="toggleStatus(this, 'P')">P</button>
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-surface text-on-surface-variant" onclick="toggleStatus(this, 'L')">L</button>
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-surface text-on-surface-variant" onclick="toggleStatus(this, 'A')">A</button>
+</div>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-6">02</span>
+<span class="font-title-md text-title-md text-on-surface">Marcus Brody</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-[11px] font-bold">At Risk</span>
+</div>
+<div class="flex items-center gap-1.5 attendance-toggle-group">
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-surface text-on-surface-variant" onclick="toggleStatus(this, 'P')">P</button>
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-surface text-on-surface-variant" onclick="toggleStatus(this, 'L')">L</button>
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-error text-on-error" onclick="toggleStatus(this, 'A')">A</button>
+</div>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-6">03</span>
+<span class="font-title-md text-title-md text-on-surface">Sofia Chen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Roll #119</span>
+</div>
+<div class="flex items-center gap-1.5 attendance-toggle-group">
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-tertiary-fixed text-on-tertiary-fixed" onclick="toggleStatus(this, 'P')">P</button>
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-surface text-on-surface-variant" onclick="toggleStatus(this, 'L')">L</button>
+<button class="px-3 py-1 rounded text-label-sm font-semibold bg-surface text-on-surface-variant" onclick="toggleStatus(this, 'A')">A</button>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-end gap-space-sm pt-space-sm border-t border-surface-container">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md" onclick="closeModal()" type="button">
+          Cancel
+        </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container" onclick="submitLiveSession()" type="button">
+          Commit &amp; Publish Attendance (34/36)
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Banner Placeholder (Dynamic Toast) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast-banner">
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-on-primary shadow-xl">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" id="toast-icon">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-message">Attendance session stored successfully.</span>
+</div>
+</div>
+<script>
+    function setPreset(cohort, subject, slot) {
+      document.getElementById('class-select').value = cohort;
+      document.getElementById('subject-select').value = subject;
+      document.getElementById('slot-select').value = slot;
+      showToast('Loaded shortcut: ' + cohort + ' - ' + subject);
+    }
+
+    function startSession() {
+      const cohort = document.getElementById('class-select').value;
+      const subject = document.getElementById('subject-select').value;
+      const slot = document.getElementById('slot-select').value;
+      
+      document.getElementById('modal-cohort-title').textContent = 'Active Session: ' + cohort + ' ' + subject;
+      document.getElementById('modal-cohort-slot').textContent = 'Today (Sep 25) • ' + slot + ' • Live Roll Call';
+      
+      const modal = document.getElementById('live-rollcall-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('live-rollcall-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function toggleStatus(btn, type) {
+      const group = btn.closest('.attendance-toggle-group');
+      const buttons = group.querySelectorAll('button');
+      buttons.forEach(b => {
+        b.className = 'px-3 py-1 rounded text-label-sm font-semibold bg-surface text-on-surface-variant';
+      });
+
+      if (type === 'P') {
+        btn.className = 'px-3 py-1 rounded text-label-sm font-semibold bg-tertiary-fixed text-on-tertiary-fixed';
+      } else if (type === 'L') {
+        btn.className = 'px-3 py-1 rounded text-label-sm font-semibold bg-secondary-fixed text-on-secondary-fixed';
+      } else {
+        btn.className = 'px-3 py-1 rounded text-label-sm font-semibold bg-error text-on-error';
+      }
+    }
+
+    function markAll(action) {
+      const groups = document.querySelectorAll('.attendance-toggle-group');
+      groups.forEach(g => {
+        const btns = g.querySelectorAll('button');
+        if (action === 'present') {
+          toggleStatus(btns[0], 'P');
+        } else {
+          toggleStatus(btns[0], '');
+        }
+      });
+      showToast(action === 'present' ? 'All records marked as Present' : 'Roster toggles reset');
+    }
+
+    function submitLiveSession() {
+      closeModal();
+      showToast('Session committed to institutional ledger! (34/36 Present)');
+    }
+
+    function notifyStudent(studentName) {
+      showToast('Direct advisory email sent to ' + studentName);
+    }
+
+    function sendAutomatedWarnings() {
+      const btn = document.getElementById('send-warning-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Dispatching 3 alerts...';
+      
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done_all</span> Alerts Dispatched (SMS + Email)';
+        showToast('Official warning letters dispatched to 3 students & academic counselors.');
+      }, 900);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-banner');
+      const label = document.getElementById('toast-message');
+      label.textContent = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+  </script>
+</div></main></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BACKEND INTEGRATION — teacher-dashboard.html
+     Loads classes from API, wires session submit to DB
+     ═══════════════════════════════════════════════════════════ -->
+<script src="api.js"></script>
+<script>
+(async function initDashboard() {
+  // 1. Auth guard — redirect to login if not a teacher
+  const user = requireAuth('teacher');
+  if (!user) return;
+
+  // 2. Show teacher name in any element that has data-teacher-name
+  document.querySelectorAll('[data-teacher-name]').forEach(el => el.textContent = user.name);
+
+  // 3. Load teacher's classes into the selects
+  let classes = [];
+  try {
+    classes = await ClassesAPI.getAll();
+  } catch (e) {
+    showToast('Could not load classes: ' + e.message);
+  }
+
+  const classSelect   = document.getElementById('class-select');
+  const subjectSelect = document.getElementById('subject-select');
+
+  if (classes.length && classSelect && subjectSelect) {
+    // Clear static options
+    classSelect.innerHTML   = '';
+    subjectSelect.innerHTML = '';
+
+    classes.forEach(cls => {
+      const opt1 = document.createElement('option');
+      opt1.value = cls._id;
+      opt1.textContent = cls.name;
+      classSelect.appendChild(opt1);
+
+      const opt2 = document.createElement('option');
+      opt2.value = cls._id;
+      opt2.textContent = cls.courseCode + ': ' + cls.course;
+      subjectSelect.appendChild(opt2);
+    });
+  }
+
+  // 4. Load analytics for the first class (at-risk panel)
+  async function loadAnalyticsForClass(classId) {
+    try {
+      const analytics = await AttendanceAPI.getAnalytics(classId);
+      const warningContainer = document.getElementById('send-warning-btn')?.closest('div');
+      if (warningContainer && analytics.belowThreshold?.length) {
+        const count = analytics.belowThreshold.length;
+        const btn = document.getElementById('send-warning-btn');
+        if (btn) btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">warning</span> Send Alerts (${count} at-risk students)`;
+      }
+    } catch (_) { /* analytics not critical */ }
+  }
+
+  if (classes.length) loadAnalyticsForClass(classes[0]._id);
+
+  classSelect?.addEventListener('change', () => loadAnalyticsForClass(classSelect.value));
+
+  // 5. Wire the "Commit & Publish" button in the modal to the real API
+  const confirmBtn = document.getElementById('start-session-btn');
+  const originalStartSession = window.startSession; // keep existing UI behaviour
+
+  // Override submitLiveSession to POST to the backend
+  window.submitLiveSession = async function() {
+    const classId = classSelect?.value;
+    const date    = document.getElementById('session-date')?.value || new Date().toISOString().split('T')[0];
+    const period  = document.getElementById('slot-select')?.value || 'Period 1';
+
+    // Collect toggle states from the modal rows
+    const rows = document.querySelectorAll('.attendance-toggle-group');
+    const records = [];
+    rows.forEach(row => {
+      const studentId = row.closest('tr')?.dataset?.studentId;
+      const active    = row.querySelector('button.bg-tertiary-fixed, button.bg-error-container, button.bg-secondary-container');
+      const status    = active?.textContent.trim() === 'P' ? 'present'
+                      : active?.textContent.trim() === 'L' ? 'late'
+                      : 'absent';
+      if (studentId) records.push({ student: studentId, status });
+    });
+
+    try {
+      await AttendanceAPI.mark({ classId, date, period, records });
+      closeModal();
+      showToast('Attendance saved to database! ✅');
+    } catch(err) {
+      // If duplicate or error, still close modal but show message
+      closeModal();
+      showToast(err.message || 'Attendance could not be saved');
+    }
+  };
+
+  // 6. Logout handler — attach to any logout button
+  document.querySelectorAll('[data-logout]').forEach(btn => {
+    btn.addEventListener('click', () => { Auth.clear(); window.location.href = 'login.html'; });
+  });
+})();
+</script>
+</body></html>
+
+

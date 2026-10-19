@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Login - Attendify</title>
+  <meta name="description" content="Sign in to the Attendify Student Attendance System."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="lgn-body">
+  <div class="lgn-card">
+    <div class="lgn-logo-row">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="10" fill="#4338CA"/>
+        <path d="M12 21L18 27L28 14" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="29" cy="13" r="3" fill="#10B981"/>
+      </svg>
+      <div>
+        <h1>Attendify</h1>
+        <p>University Attendance Portal</p>
+      </div>
+    </div>
+
+    <h2>Welcome back</h2>
+    <p class="lgn-subtitle">Sign in to your account to continue</p>
+
+    <div class="lgn-error" id="errorMsg"></div>
+
+    <form id="loginForm">
+      <div class="lgn-input-wrap">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@attendify.edu" autocomplete="email" required/>
+      </div>
+      <div class="lgn-input-wrap">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="••••••••" required/>
+      </div>
+      <button class="lgn-btn" id="loginBtn" type="submit">Sign in</button>
+    </form>
+
+    <hr class="lgn-divider"/>
+
+    <p class="demo-hint">Quick demo login:</p>
+    <div class="lgn-demo-chips">
+      <span class="lgn-chip teacher" onclick="fillDemo('teacher@attendify.edu','password123')">
+        👩‍🏫 Teacher Demo
+      </span>
+      <span class="lgn-chip student" onclick="fillDemo('student@attendify.edu','password123')">
+        🎓 Student Demo
+      </span>
+    </div>
+    <p class="demo-note">
+      First time? Run <code>node backend/seed.js</code> to create demo accounts.
+    </p>
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    // If already logged in, redirect
+    if (Auth.isLoggedIn()) {
+      const user = Auth.getUser();
+      window.location.href = user.role === 'student'
+        ? '/student-attendance-portal.html'
+        : '/teacher-dashboard.html';
+    }
+
+    function fillDemo(email, pass) {
+      document.getElementById('email').value = email;
+      document.getElementById('password').value = pass;
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('loginBtn');
+      const errEl = document.getElementById('errorMsg');
+      errEl.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Signing in...';
+
+      try {
+        const data = await AuthAPI.login(
+          document.getElementById('email').value,
+          document.getElementById('password').value
+        );
+        Auth.save(data);
+        if (data.role === 'student') {
+          window.location.href = '/student-attendance-portal.html';
+        } else {
+          window.location.href = '/teacher-dashboard.html';
+        }
+      } catch (err) {
+        errEl.textContent = err.message;
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Sign in';
+      }
+    });
+  </script>
+</body>
+</html>
